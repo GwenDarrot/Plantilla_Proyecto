@@ -1,6 +1,5 @@
 package repository;
 import model.Turno;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +17,6 @@ public interface TurnoRepository {
      * Retorna la lista de turnos de un empleado.
      */
     List<Turno> findAll();
-
 
     /**
      * Implementación concreta de TurnoRepository.
