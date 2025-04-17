@@ -1,5 +1,7 @@
 package service;
 import model.Turno;
+
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -18,7 +20,11 @@ public class TurnoService {
      * Finaliza un turno y activa el período de descanso.
      */
     public void finalizarTurno(Turno turno) {
-        // TODO: Implementar lógica de finalización y notificar a los involucrados
+        if ("trabajando".equals(turno.getEstado())) {
+            turno.setEstado("descanso");
+            turno.setHoraFin(LocalDateTime.now());
+            // Lógica de notificación...
+        }
     }
 
     /**
