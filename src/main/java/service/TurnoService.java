@@ -14,9 +14,12 @@ public class TurnoService {
 
     /**
      * Asigna un turno a un empleado.
+     *
+     * @return
      */
-    public void asignarTurno(Turno turno) {
+    public boolean asignarTurno(Turno turno) {
         // TODO: Integrar lógica de asignación de turno y comunicación con TurnoRepository
+        return false;
     }
 
     /**
