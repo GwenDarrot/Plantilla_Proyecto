@@ -1,5 +1,8 @@
 package service;
+import model.Notificacion;
 import model.Turno;
+import repository.TurnoRepository;
+import repository.TurnoRepositoryImpl;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -23,7 +26,14 @@ public class TurnoService {
         if ("trabajando".equals(turno.getEstado())) {
             turno.setEstado("descanso");
             turno.setHoraFin(LocalDateTime.now());
-            // Lógica de notificación...
+            // Simular notificación
+            Notificacion notificacion = new Notificacion();
+            notificacion.setMensaje("Turno finalizado. Descanso de 12 horas iniciado.");
+            notificacion.enviarNotificacion();
+
+            // Persistir cambios
+            TurnoRepository repository = new TurnoRepositoryImpl();
+            repository.save(turno);
         }
     }
 
