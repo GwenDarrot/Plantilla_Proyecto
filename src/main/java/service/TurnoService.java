@@ -18,6 +18,11 @@ public class TurnoService {
         this.turnoRepository = turnoRepository;
     }
 
+    // Constructor sin argumentos que inicializa el repositorio por defecto.
+    public TurnoService() {
+        this.turnoRepository = new TurnoRepositoryImpl();
+    }
+
     /**
      * Asigna un turno a un empleado.
      *

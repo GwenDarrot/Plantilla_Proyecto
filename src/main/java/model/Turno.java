@@ -41,5 +41,8 @@ public class Turno {
 
     public String getEstado() { return estado; }
     public void setEstado(String estado) { this.estado = estado; }
+
+    public void asignarTurno(String date, String time, String time1) {
+    }
 }
 
