@@ -12,6 +12,12 @@ import java.util.List;
  */
 public class TurnoService {
 
+    private final TurnoRepository turnoRepository;
+
+    public TurnoService(TurnoRepository turnoRepository) {
+        this.turnoRepository = turnoRepository;
+    }
+
     /**
      * Asigna un turno a un empleado.
      *
@@ -23,13 +29,16 @@ public class TurnoService {
             return false;
         }
 
+        // Usar el repositorio inyectado
+        turnoRepository.save(turno);
+
         return true;
     }
 
     /**
      * Finaliza un turno y activa el período de descanso.
      */
-    public void finalizarTurno(Turno turno) {
+    public static void finalizarTurno(Turno turno) {
         if ("trabajando".equals(turno.getEstado())) {
             turno.setEstado("descanso");
             turno.setHoraFin(LocalDateTime.now());
