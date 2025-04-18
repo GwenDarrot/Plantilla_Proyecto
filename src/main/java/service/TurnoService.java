@@ -19,7 +19,11 @@ public class TurnoService {
      */
     public boolean asignarTurno(Turno turno) {
         // TODO: Integrar lógica de asignación de turno y comunicación con TurnoRepository
-        return false;
+        if (turno.getId() <= 0) {
+            return false;
+        }
+
+        return true;
     }
 
     /**
