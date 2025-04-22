@@ -4,8 +4,8 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "hellocucumber/src/test/resources/asignar_turno.feature",
-        glue     = "AsignarTurnoSteps",
+        features = "src/test/resources/asignar_turno.feature",
+        glue     = "hellocucumber",
         plugin   = {
                 "pretty",
                 "html:target/cucumber-report.html"
